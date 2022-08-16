@@ -13,18 +13,18 @@ let service: google.maps.places.PlacesService;
 let infowindow: google.maps.InfoWindow;
 
 function initMap(): void {
-  const sydney = new google.maps.LatLng(-33.867, 151.195);
+  const taiwan = new google.maps.LatLng(23.6978, 120.9605);
 
   infowindow = new google.maps.InfoWindow();
 
-  map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-    center: sydney,
-    zoom: 15,
+  map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
+    center: taiwan,
+    zoom: 8,
   });
 
   const request = {
-    query: "Museum of Contemporary Art Australia",
-    fields: ["name", "geometry"],
+    query: '永安中醫診所',
+    fields: ['name', 'geometry'],
   };
 
   service = new google.maps.places.PlacesService(map);
@@ -40,7 +40,7 @@ function initMap(): void {
           createMarker(results[i]);
         }
 
-        map.setCenter(results[0].geometry!.location!);
+        // map.setCenter(results[0].geometry!.location!);
       }
     }
   );
@@ -54,8 +54,8 @@ function createMarker(place: google.maps.places.PlaceResult) {
     position: place.geometry.location,
   });
 
-  google.maps.event.addListener(marker, "click", () => {
-    infowindow.setContent(place.name || "");
+  google.maps.event.addListener(marker, 'click', () => {
+    infowindow.setContent(place.name || '');
     infowindow.open(map);
   });
 }

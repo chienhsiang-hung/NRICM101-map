@@ -8,7 +8,7 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-let map: google.maps.Map;
+let map: google.maps.Map, infoWindow: google.maps.InfoWindow;
 let service: google.maps.places.PlacesService;
 let infowindow: google.maps.InfoWindow;
 
@@ -19,11 +19,38 @@ function initMap(): void {
 
   map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
     center: taiwan,
-    zoom: 8,
+    zoom: 11,
   });
 
+  // Geolocation: Displaying User or Device Position on Maps
+  // https://developers.google.com/maps/documentation/javascript/geolocation#maps_map_geolocation-typescript
+  infoWindow = new google.maps.InfoWindow();
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position: GeolocationPosition) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("目前位置");
+        infoWindow.open(map);
+        map.setCenter(pos);
+      },
+      () => {
+        handleLocationError(true, infoWindow, map.getCenter()!);
+      }
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter()!);
+  }
+
+  // Place Searches
+  // https://developers.google.com/maps/documentation/javascript/examples/place-search
   const request = {
-    query: '永安中醫診所',
+    query: '泰源中醫診所',
     fields: ['name', 'geometry'],
   };
 
@@ -58,6 +85,20 @@ function createMarker(place: google.maps.places.PlaceResult) {
     infowindow.setContent(place.name || '');
     infowindow.open(map);
   });
+}
+
+function handleLocationError(
+  browserHasGeolocation: boolean,
+  infoWindow: google.maps.InfoWindow,
+  pos: google.maps.LatLng
+) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
 }
 
 declare global {

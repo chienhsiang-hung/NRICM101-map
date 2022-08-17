@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import geocoder
 
 def get_address():
     # 「清冠一號動態表」 : 公費清冠一號優先提供年長者及高風險族群 (供全台灣民眾查詢)
@@ -17,7 +18,8 @@ def get_address():
 
 def get_latlon(address:str):
     url = 'https://www.google.com/maps/place/' + address
-    resp = requests.get(url).text
+    headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0'}
+    resp = requests.get(url, headers=headers).text
     resp = resp[ resp.find('ll=') + 3 :]
     latlon = resp[: resp.find('"')]
     latlon = latlon.split(',')

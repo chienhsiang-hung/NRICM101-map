@@ -19,7 +19,10 @@ def get_address():
 def get_latlon(address:str):
     url = 'https://www.google.com/maps/place/' + address
     headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0'}
-    resp = requests.get(url, headers=headers).text
+    resp = requests.get(url, headers=headers)
+    print( resp.status_code)
+    resp = resp.text
+    print( resp )
     resp = resp[ resp.find('ll=') + 3 :]
     latlon = resp[: resp.find('"')]
     latlon = latlon.split(',')
@@ -28,5 +31,6 @@ def get_latlon(address:str):
 
 
 if __name__ == '__main__':
-    print( get_latlon('台中市南屯區忠勇路27-3號') )
+    # print( get_latlon('台中市南屯區忠勇路27-3號') )
     # get_address()
+    print(geocoder.google('台中市南屯區忠勇路27-3號').latlng)

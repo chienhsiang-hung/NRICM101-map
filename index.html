@@ -78,14 +78,16 @@
       map.on('locationerror', onLocationError);
 
       // read main DF
-      const DF = require('test/py/DF_cleaned.json');
-      console.log(DF);
+      fetch('https://raw.githubusercontent.com/chienhsiang-hung/NRICM101-map/main/test/py/DF_cleaned.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(jsondata => {
+        for (let key in jsondata) {
+          L.marker(jsondata[key]["('LatLon', 'LatLon')"]).addTo(map);
+        }
+      });
 
-
-
-
-      L.marker([24.137785, 120.612262]).addTo(map);
-      L.marker([24.1369484, 120.6545017]).addTo(map);
       /*
       L.popup()
         .setLatLng([24.137785, 120.612262])

@@ -110,7 +110,8 @@
       })
       .then(jsondata => {
         for (let key in jsondata) {
-          L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+          console.log(jsondata[key]["('LatLon', 'LatLon')"]);
+          let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
           .bindPopup(
             `<p>
               ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
@@ -131,7 +132,8 @@
               ${jsondata[key]["(nan, '地址')"]}
             </p>`
           )
-          .addTo(map)._icon.classList.add("huechange");
+          .addTo(map);
+          my_marker._icon.classList.add("huechange");
         };
       });
 

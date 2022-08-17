@@ -110,30 +110,30 @@
       })
       .then(jsondata => {
         for (let key in jsondata) {
-          console.log(jsondata[key]["('LatLon', 'LatLon')"]);
-          let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
-          .bindPopup(
-            `<p>
-              ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
-              清冠剩餘人次 ${
-                jsondata[key]["('順天堂', '剩餘人次')"]*1 +
-                jsondata[key]["('莊松榮', '剩餘人次')"]*1 +
-                jsondata[key]["('立康', '剩餘人次')"]*1 +
-                jsondata[key]["('勝昌', '剩餘人次')"]*1 +
-                jsondata[key]["('勸奉堂', '剩餘人次')"]*1 +
-                jsondata[key]["('華陀', '剩餘人次')"]*1 +
-                jsondata[key]["('天一', '剩餘人次')"]*1 +
-                jsondata[key]["('漢聖', '剩餘人次')"]*1 +
-                jsondata[key]["('天明', '剩餘人次')"]*1 +
-                jsondata[key]["('科達', '剩餘人次')"]*1 +
-                jsondata[key]["('富田', '剩餘人次')"]*1
-              } <br>
-              ${jsondata[key]["(nan, '電話')"]} <br>
-              ${jsondata[key]["(nan, '地址')"]}
-            </p>`
-          )
-          .addTo(map);
-          my_marker._icon.classList.add("huechange");
+          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0) {
+            L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+            .bindPopup(
+              `<p>
+                ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
+                清冠剩餘人次 ${jsondata[key]["('剩餘人次', '剩餘人次')"]} <br>
+                ${jsondata[key]["('nan', '電話')"]} <br>
+                ${jsondata[key]["('nan', '地址')"]}
+              </p>`
+            )
+            .addTo(map);
+          } else {
+            let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+            .bindPopup(
+              `<p>
+                ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
+                  清冠剩餘人次 ${jsondata[key]["('剩餘人次', '剩餘人次')"]} <br>
+                  ${jsondata[key]["('nan', '電話')"]} <br>
+                  ${jsondata[key]["('nan', '地址')"]}
+              </p>`
+            )
+            .addTo(map);
+            my_marker._icon.classList.add("huechange");
+          };
         };
       });
 

@@ -84,8 +84,13 @@
       })
       .then(jsondata => {
         for (let key in jsondata) {
-          L.marker(jsondata[key]["('LatLon', 'LatLon')"]).addTo(map);
-        }
+          L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+          .bindPopup(
+            `<p>${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]}</p>
+            <p>${jsondata[key]["(nan, '地址')"]}</p>`
+          )
+          .addTo(map);
+        };
       });
 
       /*

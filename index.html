@@ -64,7 +64,7 @@
       map.locate({setView: true, mazZoom: 16});
       // handle LocationFound
       function onLocationFound(e) {
-        var radius = e.accuracy;
+        let radius = e.accuracy;
         
         L.marker(e.latlng).addTo(map)
           .bindPopup(`您在這附近 (方圓${radius}公尺內)`).openPopup();
@@ -76,6 +76,12 @@
         alert(e.message);
       }
       map.on('locationerror', onLocationError);
+
+      // read main DF
+      const DF = require('test/py/DF_cleaned.json');
+      console.log(DF);
+
+
 
 
       L.marker([24.137785, 120.612262]).addTo(map);

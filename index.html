@@ -8,7 +8,7 @@
     <meta property="og:title" content="臺灣清冠一號地圖 Taiwan NRICM101 Map"/>
     <meta property="og:url" content="https://chienhsiang-hung.github.io/NRICM101-map/"/>
     <meta property="og:image" content=""/>
-    <meta name="keywords" content="臺灣清冠一號地圖 Taiwan NRICM101 Map"/>
+    <meta name="keywords" content="臺灣清冠一號地圖 Taiwan NRICM101 Map, 清冠一號地圖"/>
     <meta property="og:description" name="description"  content="">
     <meta name="author" content="Hung, Chien-Hsiang"/>
     <meta name="copyright" content="GNU General Public License v3.0"/>
@@ -86,8 +86,23 @@
         for (let key in jsondata) {
           L.marker(jsondata[key]["('LatLon', 'LatLon')"])
           .bindPopup(
-            `<p>${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]}</p>
-            <p>${jsondata[key]["(nan, '地址')"]}</p>`
+            `<p>
+              ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
+              清冠剩餘人次 ${
+                jsondata[key]["('順天堂', '剩餘人次')"]*1 +
+                jsondata[key]["('莊松榮', '剩餘人次')"]*1 +
+                jsondata[key]["('立康', '剩餘人次')"]*1 +
+                jsondata[key]["('勝昌', '剩餘人次')"]*1 +
+                jsondata[key]["('勸奉堂', '剩餘人次')"]*1 +
+                jsondata[key]["('華陀', '剩餘人次')"]*1 +
+                jsondata[key]["('天一', '剩餘人次')"]*1 +
+                jsondata[key]["('漢聖', '剩餘人次')"]*1 +
+                jsondata[key]["('天明', '剩餘人次')"]*1 +
+                jsondata[key]["('科達', '剩餘人次')"]*1 +
+                jsondata[key]["('富田', '剩餘人次')"]*1
+              } <br>
+              ${jsondata[key]["(nan, '地址')"]}
+            </p>`
           )
           .addTo(map);
         };

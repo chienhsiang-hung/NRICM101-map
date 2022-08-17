@@ -67,7 +67,7 @@
         var radius = e.accuracy;
         
         L.marker(e.latlng).addTo(map)
-          .bindPopup("您在大約 方圓" + radius + " 公尺內").openPopup();
+          .bindPopup(`您在這附近 (方圓${radius}公尺內)`).openPopup();
         L.circle(e.latlng, radius).addTo(map);
       }
       map.on('locationfound', onLocationFound);

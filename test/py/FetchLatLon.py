@@ -21,9 +21,10 @@ def get_latlon(address:str):
     resp = resp[ resp.find('ll=') + 3 :]
     latlon = resp[: resp.find('"')]
     latlon = latlon.split(',')
-    print(latlon)
+    latlon = [float(num) for num in latlon]
+    return latlon
 
 
 if __name__ == '__main__':
-    # get_latlon('台中市南屯區忠勇路27-3號')
-    get_address()
+    print( get_latlon('台中市南屯區忠勇路27-3號') )
+    # get_address()

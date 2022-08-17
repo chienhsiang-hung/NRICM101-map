@@ -55,7 +55,8 @@
       .center {text-align: center;}
       a .bi {font-size: 1.5em;}
 
-      img.huechange { filter: hue-rotate(120deg); }
+      img.success { filter: hue-rotate(270deg); }
+      img.fail { filter: hue-rotate(120deg); }
     </style>
   </head>
   <body>
@@ -122,9 +123,11 @@
             )
             .addTo(map);
 
-          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 == 0) {
-            my_marker._icon.classList.add("huechange");
-          };
+          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0) {
+            my_marker._icon.classList.add("success");
+          } else {
+            my_marker._icon.classList.add("fail");
+          }
         };
       });
 

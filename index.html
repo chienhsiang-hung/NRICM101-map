@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>清冠一號地圖 NRICM101 Map</title>
 
+    <!-- Leaflet https://leafletjs.com/ -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""/>
@@ -25,7 +26,7 @@
 
     <script>
       // Initializing the map
-      var map = L.map('map').setView([23.6978, 120.9605], 11)
+      var map = L.map('map').setView([23.6978, 120.9605], 7)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap'

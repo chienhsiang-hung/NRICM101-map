@@ -41,16 +41,37 @@
 
     <!-- Include Bootstrap’s CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
     <style>
       html, body {
         min-height: 100% !important;
         height: 100%;
       }
-      #map {height: 100%;}
+      #map {
+        height: calc(100% - 40px);
+      }
+      a, a:hover {color: inherit;}
+      a .bi {font-size: 1.5em;}
     </style>
   </head>
   <body>
     <div id="map"></div>
+
+    <footer class="footer mt-auto bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col align-self-end" style="text-align:right;">
+            <a href="https://chienhsiang-hung.github.io/" target="_blank" title="Home"><i class="bi bi-house-door-fill"></i></a>
+            <a href="https://hungchienhsiang.medium.com/" target="_blank" title="Medium"><i class="bi bi-medium"></i></a>
+            <a href="https://www.linkedin.com/in/chien-hsiang-hung/" target="_blank" title="Linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="mailto:iworkhard@hsiang.eu.org" target="_blank" title="Email"><i class="bi bi-envelope-plus-fill"></i></a>
+            <a href="https://github.com/chienhsiang-hung" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+            <object data="https://img.shields.io/github/stars/chienhsiang-hung/NRICM101-map?style=social"></object>
+          </div>
+        </div>
+      </div>
+    </footer>
+
 
     <script>
       // Initializing the map

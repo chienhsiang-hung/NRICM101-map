@@ -1,31 +1,66 @@
 <!DOCTYPE html>
-<!--
- @license
- Copyright 2019 Google LLC. All Rights Reserved.
- SPDX-License-Identifier: Apache-2.0
--->
+
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>清冠一號地圖 NRICM101 Map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.ts"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
   </head>
   <body>
     <div id="map"></div>
 
-    <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places&v=weekly"
-      defer
-    ></script>
+    <script>
+      // Initializing the map
+      var map = L.map('map').setView([23.6978, 120.9605], 11)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      // Geolocation
+      map.locate({setView: true, mazZoom: 16});
+      // handle LocationFound
+      function onLocationFound(e) {
+        var radius = e.accuracy;
+        
+        L.marker(e.latlng).addTo(map)
+          .bindPopup("您在 大約 方圓 " + radius + " 公尺內").openPopup();
+        L.circle(e.latlng, radius).addTo(map);
+      }
+      map.on('locationfound', onLocationFound);
+      // handle LocationError
+      function onLocationError(e) {
+        alert(e.message);
+      }
+      map.on('locationerror', onLocationError);
+
+
+
+
+
+      L.marker([24.137785, 120.612262]).addTo(map);
+      L.marker([24.1369484, 120.6545017]).addTo(map);
+      /*
+      L.popup()
+        .setLatLng([24.137785, 120.612262])
+        .setContent("I am a standalone popup.")
+        .openOn(map);      
+      */
+    </script>
+
   </body>
 </html>

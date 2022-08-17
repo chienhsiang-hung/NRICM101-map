@@ -54,6 +54,8 @@
 
       .center {text-align: center;}
       a .bi {font-size: 1.5em;}
+
+      img.huechange { filter: hue-rotate(120deg); }
     </style>
   </head>
   <body>
@@ -129,7 +131,7 @@
               ${jsondata[key]["(nan, '地址')"]}
             </p>`
           )
-          .addTo(map);
+          .addTo(map)._icon.classList.add("huechange");
         };
       });
 

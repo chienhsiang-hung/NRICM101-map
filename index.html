@@ -42,6 +42,8 @@
     <!-- Include Bootstrap’s CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <!-- jQuery CDN – Latest Stable Versions -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <style>
       html, body {
         min-height: 100% !important;
@@ -65,8 +67,8 @@
     <footer class="footer mt-auto bg-light">
       <div class="container">
         <div class="row">
-          <div class="col center">
-            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('一杯咖啡支持更新', '#29abe0', 'Z8Z0E1MZK');kofiwidget2.draw();</script>
+          <div class="col center" style="margin-top: 5px;">
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="abcdefg2981" data-color="#5F7FFF" data-emoji=""  data-font="Comic" data-text="一杯咖啡支持更新" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
           </div>
           <div class="col center">
             <a href="https://github.com/chienhsiang-hung/NRICM101-map" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
@@ -140,6 +142,14 @@
         .setContent("I am a standalone popup.")
         .openOn(map);      
       */
+    </script>
+    <script>
+      $(".bmc-btn")
+      .css('font-size', '14px')
+      .css('height', '30px')
+
+      $(".bmc-btn-text")
+      .css('width', 'auto')
     </script>
 
     <!-- Include Bootstrap’s JS -->

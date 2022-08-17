@@ -61,7 +61,7 @@
       }).addTo(map);
 
       // Geolocation
-      map.locate({setView: true, mazZoom: 16});
+      map.locate({setView: true, maxZoom: 16});
       // handle LocationFound
       function onLocationFound(e) {
         let radius = e.accuracy;

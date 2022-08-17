@@ -110,19 +110,8 @@
       })
       .then(jsondata => {
         for (let key in jsondata) {
-          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0) {
-            L.marker(jsondata[key]["('LatLon', 'LatLon')"])
-            .bindPopup(
-              `<p>
-                ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
-                清冠剩餘人次 ${jsondata[key]["('剩餘人次', '剩餘人次')"]} <br>
-                ${jsondata[key]["('nan', '電話')"]} <br>
-                ${jsondata[key]["('nan', '地址')"]}
-              </p>`
-            )
-            .addTo(map);
-          } else {
-            let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+
+          let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
             .bindPopup(
               `<p>
                 ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
@@ -132,6 +121,8 @@
               </p>`
             )
             .addTo(map);
+
+          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 == 0) {
             my_marker._icon.classList.add("huechange");
           };
         };

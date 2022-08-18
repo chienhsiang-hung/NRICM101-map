@@ -23,7 +23,7 @@ DF = DF.set_index((None, '編號'))
 
 ###################################################### Transfer address to LatLng #######################################################
 # address to latlng
-print(DF)
+print(DF.iloc[:5, 2:13])
 address_list = DF.iloc[:, -1].to_list()
 latlng_list = []
 print('address to latlng starts...')

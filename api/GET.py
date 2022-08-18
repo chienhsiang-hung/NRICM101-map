@@ -12,13 +12,13 @@ class handler(BaseHTTPRequestHandler):
 
     print(dumps(list(col.find()), ensure_ascii=False).encode('utf8').decode())
 
-    # self.send_response(200)
-    # self.send_header('Content-type', 'text/html')
-    # self.end_headers()
+    self.send_response(200)
+    self.send_header('Content-type', 'application/json')
+    self.end_headers()
     
 
 
-    # self.wfile.write(html.encode('utf-8'))
+    self.wfile.write(dumps(list(col.find()), ensure_ascii=False).encode('utf8'))
 
     return
     

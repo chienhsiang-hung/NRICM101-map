@@ -59,10 +59,23 @@
 
       img.success { filter: hue-rotate(270deg); }
       img.fail { filter: hue-rotate(120deg); }
+
+      .center-screen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+      }
     </style>
   </head>
   <body>
     <div id="map"></div>
+
+    <div class="center-screen">
+      Spinner
+    </div>
 
     <footer class="footer mt-auto bg-light">
       <div class="container">

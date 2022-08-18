@@ -74,7 +74,9 @@
     <div id="map"></div>
 
     <div class="center-screen">
-      Spinner
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
     </div>
 
     <footer class="footer mt-auto bg-light">
@@ -151,7 +153,8 @@
             my_marker._icon.classList.add("fail");
           }
         };
-      });
+      })
+      .then(() => {$('.center-screen').css('display', 'none')});
 
       /*
       L.popup()

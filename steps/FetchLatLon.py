@@ -20,9 +20,6 @@ DF.columns = pd.MultiIndex.from_arrays(DF.iloc[0:2].values)
 DF = DF.iloc[3:, 1:]
 DF = DF.set_index((None, '編號'))
 
-# Change column type in pandas
-for CN in DF.columns[2:13]:
-    DF[CN] = pd.to_numeric(DF[CN])
 
 ###################################################### Transfer address to LatLng #######################################################
 # address to latlng
@@ -44,6 +41,10 @@ for _, row in DF.iterrows():
         DF.loc[row.name, ('LatLon', 'LatLon')] = [row[('LatLon', 'LatLon')]['lat'], row[('LatLon', 'LatLon')]['lng']]
 DF.drop(to_drop, axis=0, inplace=True)
 print(f'len a/f cleaning: {len(DF)}')
+
+# change column type in pandas
+for CN in DF.columns[2:13]:
+    DF[CN] = pd.to_numeric(DF[CN])
 
 # sum the ppl
 DF[('剩餘人次', '剩餘人次')] = DF.iloc[:, 2:13].sum(axis=1)

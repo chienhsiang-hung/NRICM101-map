@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-from tqdm import tqdm
 import geocoder
 import pymongo
 import os
@@ -25,7 +24,7 @@ DF = DF.set_index((None, '編號'))
 # address to latlng
 address_list = DF.iloc[:, -2].to_list()
 latlng_list = []
-for address in tqdm(address_list):
+for address in address_list:
     geo = geocoder.arcgis(address).json
     latlng_list.append( geo )
 DF[('LatLon', 'LatLon')] = latlng_list

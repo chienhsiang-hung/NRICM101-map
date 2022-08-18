@@ -7,6 +7,8 @@ import pymongo
 import os
 
 
+
+###################################################### Fetch address from gov #######################################################
 # Fetch data from gov
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml'
 resp = requests.get(url).text
@@ -18,6 +20,8 @@ DF.columns = pd.MultiIndex.from_arrays(DF.iloc[0:2].values)
 DF = DF.iloc[3:, 1:]
 DF = DF.set_index((None, '編號'))
 
+
+###################################################### Transfer address to LatLng #######################################################
 # address to latlng
 address_list = DF.iloc[:, -2].to_list()
 latlng_list = []
@@ -40,6 +44,8 @@ print(f'len a/f cleaning: {len(DF)}')
 DF[('剩餘人次', '剩餘人次')] = DF.iloc[:, 2:13].sum(axis=1)
 DF[('剩餘人次', '剩餘人次')] = DF[('剩餘人次', '剩餘人次')].apply(lambda cell: f'{cell:.0f}')
 
+
+###################################################### Store DF to MongoDB #######################################################
 # POST to mongodb
 DF.columns = DF.columns.map(str)
 client = pymongo.MongoClient( os.environ['MONGODB_URI'] )

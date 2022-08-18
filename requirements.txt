@@ -4,3 +4,4 @@ pandas
 geocoder
 pymongo
 tqdm
+lxml

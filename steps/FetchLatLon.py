@@ -4,7 +4,6 @@ import pandas as pd
 from tqdm import tqdm
 import geocoder
 import pymongo
-from pymongo import MongoClient
 import os
 
 

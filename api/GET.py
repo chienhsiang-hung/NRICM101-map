@@ -22,4 +22,5 @@ class handler(BaseHTTPRequestHandler):
     return
 
 if __name__ == '__main__':
-    handler.do_GET()
+    handler().do_GET()
+    

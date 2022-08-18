@@ -10,7 +10,7 @@ class handler(BaseHTTPRequestHandler):
     db = client['NRICM101-map']
     col = db['source']
 
-    print(dumps(list(col.find()), ensure_ascii=False).encode('utf8').decode())
+    # print(dumps(list(col.find()), ensure_ascii=False).encode('utf8').decode())
 
     self.send_response(200)
     self.send_header('Content-type', 'application/json')

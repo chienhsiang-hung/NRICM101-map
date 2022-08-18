@@ -31,3 +31,4 @@ jobs:
     - name: execute py script # run the run.py to get the latest data
       run: |
         python test/py/FetchLatLon.py
+        python test/py/test-py-action.py

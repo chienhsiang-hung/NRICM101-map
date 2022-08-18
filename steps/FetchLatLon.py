@@ -24,7 +24,7 @@ DF = DF.set_index((None, '編號'))
 ###################################################### Transfer address to LatLng #######################################################
 # address to latlng
 print(DF)
-address_list = DF.iloc[:, -2].to_list()
+address_list = DF.iloc[:, -1].to_list()
 latlng_list = []
 print('address to latlng starts...')
 for address in tqdm(address_list):

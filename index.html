@@ -107,7 +107,9 @@
       map.on('locationerror', onLocationError);
 
       // read main DF
-      fetch('https://raw.githubusercontent.com/chienhsiang-hung/NRICM101-map/main/test/py/DF_cleaned.json')
+      
+      const url = 'https://nricm101-map.chienhsiang-hung.eu.org/api/get';
+      fetch(`${url}`)
       .then(response => {
         return response.json();
       })

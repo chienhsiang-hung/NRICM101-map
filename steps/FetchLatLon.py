@@ -4,6 +4,7 @@ import pandas as pd
 import geocoder
 import pymongo
 import os
+from tqdm import tqdm
 
 
 
@@ -25,7 +26,7 @@ DF = DF.set_index((None, '編號'))
 address_list = DF.iloc[:, -2].to_list()
 latlng_list = []
 print('address to latlng starts...')
-for address in address_list:
+for address in tqdm(address_list):
     geo = geocoder.arcgis(address).json
     latlng_list.append( geo )
 DF[('LatLon', 'LatLon')] = latlng_list
@@ -33,7 +34,6 @@ DF[('LatLon', 'LatLon')] = latlng_list
 # drop na and retrieve only latlng from geo
 print(f'len b/f cleaning: {len(DF)}')
 for _, row in DF.iterrows():
-    print(row)
     if not row.to_list()[-1]:
         DF.drop(index=row.name, inplace=True)
     else:

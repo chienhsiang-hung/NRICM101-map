@@ -24,6 +24,7 @@ DF = DF.set_index((None, '編號'))
 # address to latlng
 address_list = DF.iloc[:, -2].to_list()
 latlng_list = []
+print('address to latlng starts...')
 for address in address_list:
     geo = geocoder.arcgis(address).json
     latlng_list.append( geo )

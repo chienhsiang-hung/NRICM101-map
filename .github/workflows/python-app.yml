@@ -31,3 +31,5 @@ jobs:
     - name: execute py script
       run: |
         python steps/FetchLatLon.py
+      env: |
+        MONGODB_URI: ${{ secrets.MONGODB_URI }}

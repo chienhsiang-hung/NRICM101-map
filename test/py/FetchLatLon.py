@@ -5,7 +5,7 @@ import geocoder
 
 def get_address():
     # 「清冠一號動態表」 : 公費清冠一號優先提供年長者及高風險族群 (供全台灣民眾查詢)
-    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml?utm_source=google&utm_medium=cpc&utm_campaign=%E6%B8%85%E5%86%A0%E4%B8%80%E8%99%9F%E5%8B%95%E6%85%8B%E8%A1%A8#'
+    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml'
     resp = requests.get(url).text
     print(resp)
     soup = BeautifulSoup(resp, 'html.parser')

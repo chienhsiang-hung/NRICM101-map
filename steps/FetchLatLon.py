@@ -33,11 +33,13 @@ DF[('LatLon', 'LatLon')] = latlng_list
 
 # drop na and retrieve only latlng from geo
 print(f'len b/f cleaning: {len(DF)}')
+to_drop = []
 for _, row in DF.iterrows():
     if not row.to_list()[-1]:
-        DF.drop(index=row.name, inplace=True)
+        to_drop.append(row.name)
     else:
         DF.loc[row.name, ('LatLon', 'LatLon')] = [row[('LatLon', 'LatLon')]['lat'], row[('LatLon', 'LatLon')]['lng']]
+DF.drop(to_drop, axis=0, inplace=True)
 print(f'len a/f cleaning: {len(DF)}')
 
 # sum the ppl

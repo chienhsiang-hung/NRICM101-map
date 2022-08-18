@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from tqdm import tqdm
 import geocoder
+import pymongo
+from pymongo import MongoClient
 
 # Fetch data from gov
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml'
@@ -37,5 +39,11 @@ print(f'len a/f cleaning: {len(DF)}')
 DF[('剩餘人次', '剩餘人次')] = DF.iloc[:, 2:13].sum(axis=1)
 DF[('剩餘人次', '剩餘人次')] = DF[('剩餘人次', '剩餘人次')].apply(lambda cell: f'{cell:.0f}')
 
-
+# POST to mongodb
 DF.columns = DF.columns.map(str)
+client = pymongo.MongoClient("<>")
+db = client['NRICM101-map']
+col = db['source']
+
+col.delete_many({})
+col.insert_many(DF.to_dict('records'))

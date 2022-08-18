@@ -20,10 +20,12 @@ DF.columns = pd.MultiIndex.from_arrays(DF.iloc[0:2].values)
 DF = DF.iloc[3:, 1:]
 DF = DF.set_index((None, '編號'))
 
+# Change column type in pandas
+for CN in DF.columns[2:13]:
+    DF[CN] = pd.to_numeric(DF[CN])
 
 ###################################################### Transfer address to LatLng #######################################################
 # address to latlng
-print(DF.iloc[:5, 2:13])
 address_list = DF.iloc[:, -1].to_list()
 latlng_list = []
 print('address to latlng starts...')

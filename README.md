@@ -33,13 +33,13 @@
 
 [臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/) 搭配資料來源 [「清冠一號動態表」](https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml)
 
-[Leaflet - a JavaScript library for interactive maps](https://leafletjs.com/)
+- [Leaflet - a JavaScript library for interactive maps](https://leafletjs.com/)
 
-[Copied icon PNG and SVG Vector](https://uxwing.com/copied-icon/)
+- [Copied icon PNG and SVG Vector](https://uxwing.com/copied-icon/)
 
-[Instruction icon PNG and SVG Vector](https://uxwing.com/instruction-icon/)
+- [Instruction icon PNG and SVG Vector](https://uxwing.com/instruction-icon/)
 
-[Modal · Bootstrap](https://getbootstrap.com/docs/4.0/components/modal/#via-data-attributes)
+- [Modal · Bootstrap](https://getbootstrap.com/docs/4.0/components/modal/#via-data-attributes)
 
 網站聲明請參閱[免責聲明| 臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/immunity.html)
 

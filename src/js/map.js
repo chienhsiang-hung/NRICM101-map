@@ -5,9 +5,10 @@
         attribution: '© OpenStreetMap'
       }).addTo(map);
 
+
       // Geolocation
       map.locate({setView: true, maxZoom: 16});
-      // handle LocationFound
+        // handle LocationFound
       function onLocationFound(e) {
         let radius = e.accuracy;
         
@@ -16,14 +17,14 @@
         L.circle(e.latlng, radius).addTo(map);
       }
       map.on('locationfound', onLocationFound);
-      // handle LocationError
+        // handle LocationError
       function onLocationError(e) {
         alert(e.message);
       }
       map.on('locationerror', onLocationError);
 
+
       // read main DF
-      
       const url = 'https://nricm101-map.chienhsiang-hung.eu.org/api/get';
       fetch(`${url}`)
       .then(response => {
@@ -47,12 +48,14 @@
               </p>`
             )
             .addTo(map);
-
-          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0) {
-            my_marker._icon.classList.add("success");
-          } else {
-            my_marker._icon.classList.add("fail");
-          }
+          
+           my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
+           my_marker.on('mouseover', function() {
+            my_marker.openPopup();
+           });
+           my_marker.on('click', function() {
+            my_marker.openPopup();
+           });
         };
       })
       .then(() => {$('.center-screen').css('display', 'none')});

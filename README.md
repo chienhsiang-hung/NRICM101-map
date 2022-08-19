@@ -20,9 +20,9 @@
 
 [臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/) 搭配資料來源 [「清冠一號動態表」](https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml)
 
-如有任何使用建議歡迎[到此提出](https://github.com/chienhsiang-hung/NRICM101-map/issues)。
+如有任何使用建議歡迎[到此提出](https://github.com/chienhsiang-hung/NRICM101-map/issues)
 
-網站聲明請參閱[免責聲明| 臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/immunity.html)。
+網站聲明請參閱[免責聲明| 臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/immunity.html)
 
 
 ## 使用API獲取清冠地圖

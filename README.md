@@ -35,6 +35,8 @@
 
 - [Leaflet - a JavaScript library for interactive maps](https://leafletjs.com/)
 
+- [OpenStreetMap](https://www.openstreetmap.org/copyright)
+
 - [Copied icon PNG and SVG Vector](https://uxwing.com/copied-icon/)
 
 - [Instruction icon PNG and SVG Vector](https://uxwing.com/instruction-icon/)

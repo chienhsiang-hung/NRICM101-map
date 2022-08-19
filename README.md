@@ -39,6 +39,8 @@
 
 [Instruction icon PNG and SVG Vector](https://uxwing.com/instruction-icon/)
 
+[Modal · Bootstrap](https://getbootstrap.com/docs/4.0/components/modal/#via-data-attributes)
+
 網站聲明請參閱[免責聲明| 臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/immunity.html)
 
 

@@ -3,7 +3,7 @@
         height: 100%;
       }
       #map {
-        height: 100%;
+        height: cal(100% - 42px);
       }
       a, a:hover {color: inherit;}
 

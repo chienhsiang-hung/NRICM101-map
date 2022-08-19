@@ -18,7 +18,7 @@
 
 利用國家中醫藥研究所與中醫師公會全國聯合會合作建置公費清冠一號醫療資訊平台 - **公費清冠一號 (供全台民眾查詢)**，供中醫視訊診療需求之COVID-19確診病患、家屬透過 [臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/) ，查詢提供公費清冠ㄧ號之中醫醫療院所名單及當日公費清冠ㄧ號庫存量，以利民眾獲得所需醫療資訊。
 
-如有任何使用建議歡迎[到此提出](https://github.com/chienhsiang-hung/NRICM101-map/issues)
+如有任何使用建議歡迎 [到此提出](https://github.com/chienhsiang-hung/NRICM101-map/issues) 謝謝
 
 
 ## 使用API獲取清冠地圖
@@ -26,7 +26,7 @@
 
 `https://nricm101-map.chienhsiang-hung.eu.org/api/get` return `.json`
 
-因資料量大 [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為數秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。
+資料量大 (全台中醫資料) [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為4~6秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。唯因系統只有一人維護還請大家斟酌使用😅不好意思
 
 
 ## #Resources

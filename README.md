@@ -23,9 +23,12 @@
 
 ## 使用API獲取清冠地圖
 ![image](https://user-images.githubusercontent.com/77676044/185618824-43733399-98c7-4ecf-b56d-3e40b6cb4fac.png)
+*(update frequency - 20min)*
+```
+GET https://nricm101-map.chienhsiang-hung.eu.org/api/get
+Return .json
+```
 [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 開放給民眾免費使用
-
-`https://nricm101-map.chienhsiang-hung.eu.org/api/get` return `.json`
 
 資料量大 (全台中醫資料) [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為4~6秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。唯因系統只有一人維護還請大家斟酌使用，不便之處敬請見諒😅
 

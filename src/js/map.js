@@ -50,16 +50,22 @@
                   <hr>
                   備註 ${JSON.stringify(notes) == '{"$numberDouble":"NaN"}' ? '' : notes}
               </p>`
-            )
-            .addTo(map);
+            );
           
-           my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
-           my_marker.on('mouseover', function() {
+          if (isfree) {
+            free.addLayer(my_marker);
+          } else {
+            notfree.addLayer(my_marker);
+          };
+           
+          
+          my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
+          my_marker.on('mouseover', function() {
             my_marker.openPopup();
-           });
-           my_marker.on('click', function() {
+          });
+          my_marker.on('click', function() {
             my_marker.openPopup();
-           });
+          });
         };
       })
       .then(() => {$('.center-screen').css('display', 'none')});

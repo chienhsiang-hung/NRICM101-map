@@ -8,19 +8,22 @@
     right: 30px;
     cursor: pointer;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    text-align: center;
   }
 
   #floating-button img {
     width: 40px;
     height: 40px;
-    top: 7.5;
-    left: 7.5;
   }
   
   .plus{
     color: black;
     position: absolute;
+    top: 7.5px;
     display: block;
+    bottom: 0;
+    left: 7.5px;
+    right: 0;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -54,38 +57,43 @@
   
   .edit{
     position: absolute;
+    top: 0;
     display: block;
+    bottom: 0;
+    left: 0;
+    display: block;
+    right: 0;
     padding: 0;
     opacity: 0;
     margin: auto;
     line-height: 65px;
-    transform: rotateZ(-70deg);
+    transform: rotate(-70deg);
     transition: all 0.3s;
     animation: edit-out 0.3s;
   }
   
   #container-floating:hover .edit{
     animation: edit-in 0.2s;
-     animation-delay: 0.1s;
+    animation-delay: 0.1s;
     animation-fill-mode: forwards;
   }
   
   @keyframes edit-in{
-      from {opacity: 0; transform: rotateZ(-70deg);}
-      to {opacity: 1; transform: rotateZ(0deg);}
+      from {opacity: 0; transform: rotate(-70deg);}
+      to {opacity: 1; transform: rotate(0deg);}
   }
   
   @keyframes edit-out{
-      from {opacity: 1; transform: rotateZ(0deg);}
-      to {opacity: 0; transform: rotateZ(-70deg);}
+      from {opacity: 1; transform: rotate(0deg);}
+      to {opacity: 0; transform: rotate(-70deg);}
   }
   
   @keyframes plus-in{
-      from {opacity: 1; transform: rotateZ(0deg);}
-      to {opacity: 0; transform: rotateZ(180deg);}
+      from {opacity: 1; transform: rotate(0deg);}
+      to {opacity: 0; transform: rotate(180deg);}
   }
   
   @keyframes plus-out{
-      from {opacity: 0; transform: rotateZ(180deg);}
-      to {opacity: 1; transform: rotateZ(0deg);}
+      from {opacity: 0; transform: rotate(180deg);}
+      to {opacity: 1; transform: rotate(0deg);}
   }

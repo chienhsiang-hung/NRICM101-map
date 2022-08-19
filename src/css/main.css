@@ -24,7 +24,7 @@
       
       .bottom-right-screen {
         position: absolute;
-        bottom: 2%;
+        bottom: 1%;
         left: 99%;
         margin-right: -50%;
         transform: translate(-50%, -50%);

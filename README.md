@@ -26,7 +26,7 @@
 
 `https://nricm101-map.chienhsiang-hung.eu.org/api/get` return `.json`
 
-資料量大 (全台中醫資料) [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為4~6秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。唯因系統只有一人維護還請大家斟酌使用😅不好意思
+資料量大 (全台中醫資料) [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為4~6秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。唯因系統只有一人維護還請大家斟酌使用，不便之處敬請見諒😅
 
 
 ## #Resources

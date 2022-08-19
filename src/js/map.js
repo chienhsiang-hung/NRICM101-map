@@ -31,9 +31,6 @@
         return response.json();
       })
       .then(jsondata => {
-        let free_layer = L.layerGroup([]),
-            notfree_layer = L.layerGroup([]);
-
         for (let key in jsondata) {
           
           let notes = jsondata[key]["('就診中醫院所前請先點選西醫快篩陽性判斷視訊院所', '下方為中醫院所LINE ID')"]
@@ -50,9 +47,9 @@
                   備註 ${JSON.stringify(notes) == '{"$numberDouble":"NaN"}' ? '' : notes}
               </p>`
             )
-            .addTo(jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是'? free_layer:notfree_layer);
+            .addTo(map);
           
-           //my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
+           my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
            my_marker.on('mouseover', function() {
             my_marker.openPopup();
            });
@@ -61,11 +58,7 @@
            });
         };
       })
-      .then(() => {
-        layerControl.addOverlay(free_layer, "公費");
-        layerControl.addOverlay(notfree_layer, "非公費")
-        $('.center-screen').css('display', 'none');
-      });
+      .then(() => {$('.center-screen').css('display', 'none')});
 
       /*
       L.popup()

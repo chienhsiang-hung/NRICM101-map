@@ -26,7 +26,7 @@
 
 `https://nricm101-map.chienhsiang-hung.eu.org/api/get` return `.json`
 
-因資料量大 [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為數秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎前端接取測試。
+因資料量大 [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為數秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。
 
 
 ## 一杯咖啡支持更新

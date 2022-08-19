@@ -3,7 +3,7 @@
         height: 100%;
       }
       #map {
-        height: cal(100% - 42px);
+        height: 100%;
       }
       a, a:hover {color: inherit;}
 
@@ -21,3 +21,13 @@
         transform: translate(-50%, -50%);
         z-index: 10000;
       }
+      
+      .bottom-right-screen {
+        position: absolute;
+        bottom: 1%;
+        left: 99%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+      }
+      #exampleModalLong { z-index: 10001; }

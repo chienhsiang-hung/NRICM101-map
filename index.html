@@ -45,8 +45,12 @@
     <!-- jQuery CDN – Latest Stable Versions -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <link href="src/main.css" rel="stylesheet">
+    <link href="https://chienhsiang-hung.github.io/kaggle-profile-summary-card/src/css/github-markdown-light.css" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
+    <link href="src/css/floatingbtn.css" rel="stylesheet">
   </head>
+
+
   <body>
     <div id="map"></div>
 
@@ -55,26 +59,70 @@
         <span class="sr-only"></span>
       </div>
     </div>
+    <div class="bottom-right-screen" onclick="{$('#exampleModalLong').modal('show')}">
+      <div id="container-floating">
+        <div id="floating-button">
+          <img class="plus" src="src/icon/instruction-icon.svg">
+          <img class="edit" src="src/icon/copied-icon.svg">
+        </div>
+      </div>
+    </div>
 
-    <footer class="footer mt-auto bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col center" style="margin-top: 5px;">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
             <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="abcdefg2981" data-color="#5F7FFF" data-emoji=""  data-font="Comic" data-text="一杯咖啡支持更新" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-          </div>
-          <div class="col center">
             <a href="https://github.com/chienhsiang-hung/NRICM101-map" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-          </div>
-          <div class="col center">
             <a href="https://chienhsiang-hung.github.io/" target="_blank" title="Hsiang"><i class="bi bi-person-fill"></i></a>
+            <button type="button" class="close" onclick="{$('#exampleModalLong').modal('hide')}" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <article class="markdown-body entry-content container-lg" itemprop="text">
+              <h1 dir="auto"><a id="user-content-臺灣清冠一號地圖-taiwan-nricm101-map" class="anchor" aria-hidden="true" href="#臺灣清冠一號地圖-taiwan-nricm101-map"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>臺灣清冠一號地圖 Taiwan NRICM101 Map</h1>
+              <p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/d84100aea2d56a4d60f2e8fee8ef3c074d91cabf61a012e4969edd8e662a5f40/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170"><img src="https://camo.githubusercontent.com/d84100aea2d56a4d60f2e8fee8ef3c074d91cabf61a012e4969edd8e662a5f40/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170" alt="" data-canonical-src="https://img.shields.io/github/license/chienhsiang-hung/NRICM101-map" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/cba01e89569dd5cb66709d9ab253c4936386f3eabfa581507b46a1392aed3455/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f756e742f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170"><img src="https://camo.githubusercontent.com/cba01e89569dd5cb66709d9ab253c4936386f3eabfa581507b46a1392aed3455/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f756e742f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170" alt="" data-canonical-src="https://img.shields.io/github/languages/count/chienhsiang-hung/NRICM101-map" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/64a6fcbc2393eb52a62fae6c06fae1e1ec753c8f37acbdd05444eba128848095/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f746f702f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170"><img src="https://camo.githubusercontent.com/64a6fcbc2393eb52a62fae6c06fae1e1ec753c8f37acbdd05444eba128848095/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f746f702f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170" alt="" data-canonical-src="https://img.shields.io/github/languages/top/chienhsiang-hung/NRICM101-map" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/18c42e611a66c1ebdaa33f4ba5f0eb004f3d1257c4ede310ea6832434df26a1e/68747470733a2f2f696d672e736869656c64732e696f2f776562736974653f75726c3d6874747073253341253246253246636869656e687369616e672d68756e672e6769746875622e696f2532464e5249434d3130312d6d6170253246"><img src="https://camo.githubusercontent.com/18c42e611a66c1ebdaa33f4ba5f0eb004f3d1257c4ede310ea6832434df26a1e/68747470733a2f2f696d672e736869656c64732e696f2f776562736974653f75726c3d6874747073253341253246253246636869656e687369616e672d68756e672e6769746875622e696f2532464e5249434d3130312d6d6170253246" alt="" data-canonical-src="https://img.shields.io/website?url=https%3A%2F%2Fchienhsiang-hung.github.io%2FNRICM101-map%2F" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/6648847f9850a8a5862176c00d5bdabd98efe30b99b94f3d8f01ae811a4a9480/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6465706c6f796d656e74732f636869656e687369616e672d68756e672f4e5249434d3130312d6d61702f6769746875622d7061676573"><img src="https://camo.githubusercontent.com/6648847f9850a8a5862176c00d5bdabd98efe30b99b94f3d8f01ae811a4a9480/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6465706c6f796d656e74732f636869656e687369616e672d68756e672f4e5249434d3130312d6d61702f6769746875622d7061676573" alt="" data-canonical-src="https://img.shields.io/github/deployments/chienhsiang-hung/NRICM101-map/github-pages" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/5c5518d2d2e5f43162e7f10cf89e9f3739df3c6e0c137ec8f27fe837ddc5c042/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6465706c6f796d656e74732f636869656e687369616e672d68756e672f4e5249434d3130312d6d61702f50726f64756374696f6e"><img src="https://camo.githubusercontent.com/5c5518d2d2e5f43162e7f10cf89e9f3739df3c6e0c137ec8f27fe837ddc5c042/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6465706c6f796d656e74732f636869656e687369616e672d68756e672f4e5249434d3130312d6d61702f50726f64756374696f6e" alt="" data-canonical-src="https://img.shields.io/github/deployments/chienhsiang-hung/NRICM101-map/Production" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/7983e91b55dc273dd901d6f76c782f29b3bdd2159480363f9ecf6a5debb0d532/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170"><img src="https://camo.githubusercontent.com/7983e91b55dc273dd901d6f76c782f29b3bdd2159480363f9ecf6a5debb0d532/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170" alt="" data-canonical-src="https://img.shields.io/github/languages/code-size/chienhsiang-hung/NRICM101-map" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/97ebe127a00c5636191e04eaafd477917c90c56213584357b27115013d3e7983/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170"><img src="https://camo.githubusercontent.com/97ebe127a00c5636191e04eaafd477917c90c56213584357b27115013d3e7983/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170" alt="" data-canonical-src="https://img.shields.io/github/repo-size/chienhsiang-hung/NRICM101-map" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/852de0c0701f68f7396a8a4ac4f6889fb865ef66b3e5d2fa28fa88e3e687325c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f636869656e687369616e672d68756e672f4e5249434d3130312d6d61703f696e636c7564655f70726572656c6561736573"><img src="https://camo.githubusercontent.com/852de0c0701f68f7396a8a4ac4f6889fb865ef66b3e5d2fa28fa88e3e687325c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f636869656e687369616e672d68756e672f4e5249434d3130312d6d61703f696e636c7564655f70726572656c6561736573" alt="" data-canonical-src="https://img.shields.io/github/v/release/chienhsiang-hung/NRICM101-map?include_prereleases" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/2f076decd7c5ea72e78e77719c4b44fceedabdbab57bc3c0b055e4cdc1312f2f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f64697363757373696f6e732f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170"><img src="https://camo.githubusercontent.com/2f076decd7c5ea72e78e77719c4b44fceedabdbab57bc3c0b055e4cdc1312f2f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f64697363757373696f6e732f636869656e687369616e672d68756e672f4e5249434d3130312d6d6170" alt="" data-canonical-src="https://img.shields.io/github/discussions/chienhsiang-hung/NRICM101-map" style="max-width: 100%;"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/be8b1fc5c36c716cdf21ac02578f8eeaeec1bdbedaac1397fee24b7097323ae1/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636865636b732d7374617475732f636869656e687369616e672d68756e672f4e5249434d3130312d6d61702f6d61696e"><img src="https://camo.githubusercontent.com/be8b1fc5c36c716cdf21ac02578f8eeaeec1bdbedaac1397fee24b7097323ae1/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636865636b732d7374617475732f636869656e687369616e672d68756e672f4e5249434d3130312d6d61702f6d61696e" alt="" data-canonical-src="https://img.shields.io/github/checks-status/chienhsiang-hung/NRICM101-map/main" style="max-width: 100%;"></a></p>
+              <blockquote>
+              <p dir="auto">家人同事染疫 與 網友確診搜索公費清冠一號並能視訊看診之中醫上困難</p>
+              <p dir="auto">決定製作清冠地圖 供大家免費查閱</p>
+              </blockquote>
+              <p dir="auto">利用國家中醫藥研究所與中醫師公會全國聯合會合作建置公費清冠一號醫療資訊平台 - <strong>公費清冠一號 (供全台民眾查詢)</strong>，供中醫視訊診療需求之COVID-19確診病患、家屬透過 <a href="https://chienhsiang-hung.github.io/NRICM101-map/" rel="nofollow">臺灣清冠一號地圖 Taiwan NRICM101 Map</a> ，查詢提供公費清冠ㄧ號之中醫醫療院所名單及當日公費清冠ㄧ號庫存量，以利民眾獲得所需醫療資訊。</p>
+              <p dir="auto">如有任何使用建議歡迎<a href="https://github.com/chienhsiang-hung/NRICM101-map/issues">到此提出</a></p>
+              <h2 dir="auto"><a id="user-content-使用api獲取清冠地圖" class="anchor" aria-hidden="true" href="#使用api獲取清冠地圖"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>使用API獲取清冠地圖</h2>
+              <p dir="auto"><a href="https://nricm101-map.chienhsiang-hung.eu.org/api/get" rel="nofollow">清冠地圖API</a> 開放給民眾免費使用</p>
+              <p dir="auto"><code>https://nricm101-map.chienhsiang-hung.eu.org/api/get</code> return <code>.json</code></p>
+              <p dir="auto">因資料量大 <a href="https://nricm101-map.chienhsiang-hung.eu.org/api/get" rel="nofollow">清冠地圖API</a> 平均讀取時間為數秒。已開放<code>'Access-Control-Allow-Origin'</code> to <code>'*'</code> ，歡迎其他前端接取免費測試。</p>
+              <h2 dir="auto"><a id="user-content-resources" class="anchor" aria-hidden="true" href="#resources"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>#Resources</h2>
+              <p dir="auto"><a href="https://chienhsiang-hung.github.io/NRICM101-map/" rel="nofollow">臺灣清冠一號地圖 Taiwan NRICM101 Map</a> 搭配資料來源 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml" rel="nofollow">「清冠一號動態表」</a></p>
+              <p dir="auto"><a href="https://leafletjs.com/" rel="nofollow">Leaflet - a JavaScript library for interactive maps</a></p>
+              <p dir="auto"><a href="https://uxwing.com/copied-icon/" rel="nofollow">Copied icon PNG and SVG Vector</a></p>
+              <p dir="auto"><a href="https://uxwing.com/instruction-icon/" rel="nofollow">Instruction icon PNG and SVG Vector</a></p>
+              <p dir="auto"><a href="https://getbootstrap.com/docs/4.0/components/modal/#via-data-attributes" rel="nofollow">Modal · Bootstrap</a></p>
+              <p dir="auto">網站聲明請參閱<a href="https://chienhsiang-hung.github.io/NRICM101-map/immunity.html" rel="nofollow">免責聲明| 臺灣清冠一號地圖 Taiwan NRICM101 Map</a></p>
+              <h2 dir="auto"><a id="user-content-一杯咖啡支持更新" class="anchor" aria-hidden="true" href="#一杯咖啡支持更新"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>一杯咖啡支持更新</h2>
+              <p dir="auto">感謝有您的支持讓地圖能夠穩定持續更新。</p>
+              <p dir="auto"><a href="https://www.buymeacoffee.com/abcdefg2981" rel="nofollow">Chien-Hsiang Hung (buymeacoffee.com)</a></p>
+              <p dir="auto"><a href="https://ko-fi.com/chienhsianghung" rel="nofollow">Buy Chien-Hsiang Hung a Coffee. ko-fi.com/chienhsianghung - Ko-fi <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">❤️</g-emoji></a></p>
+            </article>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
-
-    <script src="src/map.js"></script>
-    <script src="src/main.js"></script>
+    <script src="src/js/map.js"></script>
+    <script src="src/js/main.js"></script>
 
     <!-- Include Bootstrap’s JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

@@ -46,6 +46,10 @@ Return .json
 - TBD
 
 
+## 介紹文章
+[家人染疫後 我做了一個清冠地圖 - 洪健翔 Hung, Chien-hsiang - Medium](https://hungchienhsiang.medium.com/%E5%AE%B6%E4%BA%BA%E6%9F%93%E7%96%AB%E5%BE%8C-%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E5%80%8B%E6%B8%85%E5%86%A0%E5%9C%B0%E5%9C%96-584350009dee)
+
+
 ## #Resources
 [臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/) 搭配資料來源 [「清冠一號動態表」](https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml)
 
@@ -60,10 +64,6 @@ Return .json
 - [Modal · Bootstrap](https://getbootstrap.com/docs/4.0/components/modal/#via-data-attributes)
 
 網站聲明請參閱[免責聲明| 臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/immunity.html)
-
-
-## 介紹文章
-[家人染疫後 我做了一個清冠地圖 - 洪健翔 Hung, Chien-hsiang - Medium](https://hungchienhsiang.medium.com/%E5%AE%B6%E4%BA%BA%E6%9F%93%E7%96%AB%E5%BE%8C-%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E5%80%8B%E6%B8%85%E5%86%A0%E5%9C%B0%E5%9C%96-584350009dee)
 
 
 ## 一杯咖啡支持更新

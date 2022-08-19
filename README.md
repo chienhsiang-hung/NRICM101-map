@@ -29,6 +29,13 @@
 資料量大 (全台中醫資料) [清冠地圖API](https://nricm101-map.chienhsiang-hung.eu.org/api/get) 平均讀取時間為4~6秒。已開放`'Access-Control-Allow-Origin'` to `'*'` ，歡迎其他前端接取免費測試。唯因系統只有一人維護還請大家斟酌使用，不便之處敬請見諒😅
 
 
+## 待新增Features
+- 搜尋地址 (When Device Local Info Failed)
+- 搜尋診所
+- 公費圖層 (Filter)
+...TBD
+
+
 ## #Resources
 
 [臺灣清冠一號地圖 Taiwan NRICM101 Map](https://chienhsiang-hung.github.io/NRICM101-map/) 搭配資料來源 [「清冠一號動態表」](https://docs.google.com/spreadsheets/d/e/2PACX-1vQjf_HNeEZKM-XJX-q5v4cfNrB3kcv4gOT8kFbV9rurfoX_H5Qv9112Pv0PgYNFSzbReyNlQkLrJib3/pubhtml)

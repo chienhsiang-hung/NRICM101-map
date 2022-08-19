@@ -23,58 +23,60 @@
       }
       map.on('locationerror', onLocationError);
 
-
+      let free = L.layerGroup([]);
+      let notfree = L.layerGroup([]);
       // read main DF
-      const url = 'https://nricm101-map.chienhsiang-hung.eu.org/api/get';
-      fetch(`${url}`)
+      fetch('https://nricm101-map.chienhsiang-hung.eu.org/api/get')
       .then(response => {
         return response.json();
       })
       .then(jsondata => {
-        let free = L.layerGroup([]);
-        let notfree = L.layerGroup([]);
-        
         for (let key in jsondata) {
-          
-          let notes = jsondata[key]["('就診中醫院所前請先點選西醫快篩陽性判斷視訊院所', '下方為中醫院所LINE ID')"];
-          let isfree = jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是'? true:false;
+          async function f() {
 
-          var my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+            var my_marker = L.marker(
+              jsondata[key]["('LatLon', 'LatLon')"], {
+                icon: L.divIcon({
+                  className: jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0? "success":"fail"
+                })
+              }
+            )
             .bindPopup(
               `<p>
                 ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
                   清冠剩餘人次 ${jsondata[key]["('剩餘人次', '剩餘人次')"]} <br>
-                  公費 ${isfree? '是':'否'} <br>
+                  公費 ${jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是'? '是':'否'} <br>
                   ${jsondata[key]["(nan, '電話')"]} <br>
                   ${jsondata[key]["(nan, '地址')"]} <br>
                   <hr>
-                  備註 ${JSON.stringify(notes) == '{"$numberDouble":"NaN"}' ? '' : notes}
+                  備註 ${JSON.stringify(
+                    jsondata[key]["('就診中醫院所前請先點選西醫快篩陽性判斷視訊院所', '下方為中醫院所LINE ID')"]
+                  ) == '{"$numberDouble":"NaN"}' ? '' : notes}
               </p>`
             );
-          // marker style
-          my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
-          my_marker.on('mouseover', function() {
-            my_marker.openPopup();
-          });
-          my_marker.on('click', function() {
-            my_marker.openPopup();
-          });
-        };
-        return free, notfree, my_marker
+
+            // marker style
+            // my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
+            await my_marker.on('mouseover', function() {my_marker.openPopup()});
+            await my_marker.on('click', function() {my_marker.openPopup()});
+            await if (jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是') {
+              free.addLayer(my_marker);
+            } else {
+              notfree.addLayer(my_marker);
+            };
+          }
+        }
       })
-      .then((my_marker, free, notfree) => {
+      .then(jsondata => {
 
-
-        if (isfree) {
-          free.addLayer(my_marker);
-        } else {
-          notfree.addLayer(my_marker);
-        };
-
+      })
+      .then(() => {
         free.addTo(map);
         notfree.addTo(map);
+        $('.center-screen').css('display', 'none');
       })
-      .then(() => {$('.center-screen').css('display', 'none')});
+
+      
 
       /*
       L.popup()

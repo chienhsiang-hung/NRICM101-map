@@ -31,3 +31,10 @@
         z-index: 10000;
       }
       #exampleModalLong { z-index: 10001; }
+      
+      .updateFQ {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        font-size: 18px;
+      }

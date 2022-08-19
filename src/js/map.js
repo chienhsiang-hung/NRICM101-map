@@ -37,9 +37,9 @@
         for (let key in jsondata) {
           
           let notes = jsondata[key]["('就診中醫院所前請先點選西醫快篩陽性判斷視訊院所', '下方為中醫院所LINE ID')"];
-          let isfree = jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是'? True:False;
+          let isfree = jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是'? true:false;
 
-          let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
+          var my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
             .bindPopup(
               `<p>
                 ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
@@ -51,14 +51,7 @@
                   備註 ${JSON.stringify(notes) == '{"$numberDouble":"NaN"}' ? '' : notes}
               </p>`
             );
-          
-          if (isfree) {
-            free.addLayer(my_marker);
-          } else {
-            notfree.addLayer(my_marker);
-          };
-           
-          
+          // marker style
           my_marker._icon.classList.add(jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0 ? "success" : "fail");
           my_marker.on('mouseover', function() {
             my_marker.openPopup();
@@ -67,6 +60,19 @@
             my_marker.openPopup();
           });
         };
+        return free, notfree, my_marker
+      })
+      .then((my_marker, free, notfree) => {
+
+
+        if (isfree) {
+          free.addLayer(my_marker);
+        } else {
+          notfree.addLayer(my_marker);
+        };
+
+        free.addTo(map);
+        notfree.addTo(map);
       })
       .then(() => {$('.center-screen').css('display', 'none')});
 

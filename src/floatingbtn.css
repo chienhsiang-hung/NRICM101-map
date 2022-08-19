@@ -1,9 +1,8 @@
- 
   #floating-button{
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: #db4437;
+    background: white;
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -12,7 +11,7 @@
   }
   
   .plus{
-    color: white;
+    color: black;
     position: absolute;
     top: 0;
     display: block;
@@ -91,101 +90,4 @@
   @keyframes plus-out{
       from {opacity: 0; transform: rotateZ(180deg);}
       to {opacity: 1; transform: rotateZ(0deg);}
-  }
-  
-  .nds{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 300;
-    transform:  scale(0);
-    cursor: pointer;
-  }
-  
-  .nd1{
-    background: #d3a411;
-    right: 40px;
-    bottom: 120px;
-    animation-delay: 0.2s;
-      animation: bounce-out-nds 0.3s linear;
-    animation-fill-mode:  forwards;
-  }
-  
-  .nd3{
-    background: #3c80f6;
-    right: 40px;
-    bottom: 180px;
-    animation-delay: 0.15s;
-      animation: bounce-out-nds 0.15s linear;
-    animation-fill-mode:  forwards;
-  }
-  
-  .nd4{
-    background: #ba68c8;
-    right: 40px;
-    bottom: 240px;
-    animation-delay: 0.1s;
-      animation: bounce-out-nds 0.1s linear;
-    animation-fill-mode:  forwards;
-  }
-  
-  @keyframes bounce-nds{
-      from {opacity: 0;}
-      to {opacity: 1; transform: scale(1);}
-  }
-  
-  @keyframes bounce-out-nds{
-      from {opacity: 1; transform: scale(1);}
-      to {opacity: 0; transform: scale(0);}
-  }
-  
-  #container-floating:hover .nds{
-    
-    animation: bounce-nds 0.1s linear;
-    animation-fill-mode:  forwards;
-  }
-  
-  #container-floating:hover .nd3{
-    animation-delay: 0.08s;
-  }
-  #container-floating:hover .nd4{
-    animation-delay: 0.15s;
-  }
-  #container-floating:hover .nd5{
-    animation-delay: 0.2s;
-  }
-  
-  .letter{
-    font-size: 23px;
-    font-family: 'Roboto';
-    color: white;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0;
-    top: 0;
-    bottom: 0;
-    text-align: center;
-    line-height: 40px;
-  }
-  
-  .reminder{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    line-height: 40px;
-  }
-  
-  .profile{
-    border-radius: 50%;
-    width: 40px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: 20px;
   }

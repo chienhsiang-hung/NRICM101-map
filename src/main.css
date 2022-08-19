@@ -1,0 +1,23 @@
+      html, body {
+        min-height: 100% !important;
+        height: 100%;
+      }
+      #map {
+        height: calc(100% - 42px);
+      }
+      a, a:hover {color: inherit;}
+
+      .center {text-align: center;}
+      a .bi {font-size: 1.5em;}
+
+      img.success { filter: hue-rotate(270deg); }
+      img.fail { filter: hue-rotate(120deg); }
+
+      .center-screen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+      }

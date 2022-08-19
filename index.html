@@ -44,31 +44,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
     <!-- jQuery CDN – Latest Stable Versions -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <style>
-      html, body {
-        min-height: 100% !important;
-        height: 100%;
-      }
-      #map {
-        height: calc(100% - 42px);
-      }
-      a, a:hover {color: inherit;}
 
-      .center {text-align: center;}
-      a .bi {font-size: 1.5em;}
-
-      img.success { filter: hue-rotate(270deg); }
-      img.fail { filter: hue-rotate(120deg); }
-
-      .center-screen {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        z-index: 10000;
-      }
-    </style>
+    <link href="src/main.css" rel="stylesheet">
   </head>
   <body>
     <div id="map"></div>
@@ -96,81 +73,8 @@
     </footer>
 
 
-    <script>
-      // Initializing the map
-      var map = L.map('map').setView([23.6978, 120.9605], 7)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-      }).addTo(map);
-
-      // Geolocation
-      map.locate({setView: true, maxZoom: 16});
-      // handle LocationFound
-      function onLocationFound(e) {
-        let radius = e.accuracy;
-        
-        L.marker(e.latlng).addTo(map)
-          .bindPopup(`您在這附近 (方圓${radius}公尺內)`).openPopup();
-        L.circle(e.latlng, radius).addTo(map);
-      }
-      map.on('locationfound', onLocationFound);
-      // handle LocationError
-      function onLocationError(e) {
-        alert(e.message);
-      }
-      map.on('locationerror', onLocationError);
-
-      // read main DF
-      
-      const url = 'https://nricm101-map.chienhsiang-hung.eu.org/api/get';
-      fetch(`${url}`)
-      .then(response => {
-        return response.json();
-      })
-      .then(jsondata => {
-        for (let key in jsondata) {
-          
-          let notes = jsondata[key]["('就診中醫院所前請先點選西醫快篩陽性判斷視訊院所', '下方為中醫院所LINE ID')"]
-
-          let my_marker = L.marker(jsondata[key]["('LatLon', 'LatLon')"])
-            .bindPopup(
-              `<p>
-                ${jsondata[key]["('全聯會提供公費清冠一號民眾意見反應專區', '醫療院所名稱')"]} <br>
-                  清冠剩餘人次 ${jsondata[key]["('剩餘人次', '剩餘人次')"]} <br>
-                  公費 ${jsondata[key]["('原廠清冠一號照片', '清冠一號公費')"] == '是' ? '是':'否'} <br>
-                  ${jsondata[key]["(nan, '電話')"]} <br>
-                  ${jsondata[key]["(nan, '地址')"]} <br>
-                  <hr>
-                  備註 ${JSON.stringify(notes) == '{"$numberDouble":"NaN"}' ? '' : notes}
-              </p>`
-            )
-            .addTo(map);
-
-          if (jsondata[key]["('剩餘人次', '剩餘人次')"]*1 > 0) {
-            my_marker._icon.classList.add("success");
-          } else {
-            my_marker._icon.classList.add("fail");
-          }
-        };
-      })
-      .then(() => {$('.center-screen').css('display', 'none')});
-
-      /*
-      L.popup()
-        .setLatLng([24.137785, 120.612262])
-        .setContent("I am a standalone popup.")
-        .openOn(map);      
-      */
-    </script>
-    <script>
-      $(".bmc-btn")
-      .css('font-size', '14px')
-      .css('height', '30px')
-
-      $(".bmc-btn-text")
-      .css('width', 'auto')
-    </script>
+    <script src="src/map.js"></script>
+    <script src="src/main.js"></script>
 
     <!-- Include Bootstrap’s JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

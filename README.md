@@ -47,7 +47,8 @@ Return .json
 
 
 ## 介紹文章
-[家人染疫後 我做了一個清冠地圖 - 洪健翔 Hung, Chien-hsiang - Medium](https://hungchienhsiang.medium.com/%E5%AE%B6%E4%BA%BA%E6%9F%93%E7%96%AB%E5%BE%8C-%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E5%80%8B%E6%B8%85%E5%86%A0%E5%9C%B0%E5%9C%96-584350009dee)
+- [家人染疫後 我做了一個清冠地圖 - 洪健翔 Hung, Chien-hsiang - Medium](https://hungchienhsiang.medium.com/%E5%AE%B6%E4%BA%BA%E6%9F%93%E7%96%AB%E5%BE%8C-%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E5%80%8B%E6%B8%85%E5%86%A0%E5%9C%B0%E5%9C%96-584350009dee)
+- [[情報] 清冠一號地圖 9/15限縮公費對象 - 看板 Lifeismoney - 批踢踢實業坊 (ptt.cc)](https://www.ptt.cc/bbs/Lifeismoney/M.1662723549.A.924.html)
 
 
 ## #Resources

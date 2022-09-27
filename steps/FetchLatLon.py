@@ -38,7 +38,10 @@ for _, row in DF.iterrows():
     if not row.to_list()[-1]:
         to_drop.append(row.name)
     else:
-        DF.loc[row.name, ('LatLon', 'LatLon')] = [row[('LatLon', 'LatLon')]['lat'], row[('LatLon', 'LatLon')]['lng']]
+        try:
+            DF.loc[row.name, ('LatLon', 'LatLon')] = [row[('LatLon', 'LatLon')]['lat'], row[('LatLon', 'LatLon')]['lng']]
+        except:
+            print([row[('LatLon', 'LatLon')]['lat'], row[('LatLon', 'LatLon')]['lng']])
 DF.drop(to_drop, axis=0, inplace=True)
 print(f'len a/f cleaning: {len(DF)}')
 

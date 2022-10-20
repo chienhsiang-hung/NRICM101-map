@@ -3,11 +3,7 @@
         height: 100%;
       }
       #map {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        height: 100%;
       }
       a, a:hover {color: inherit;}
 
@@ -25,21 +21,21 @@
         transform: translate(-50%, -50%);
         z-index: 10000;
       }
-      
+
       .bottom-right-screen {
         position: absolute;
-        top: 125px;
+        bottom: 1%;
         left: 99%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
         z-index: 10000;
       }
       #exampleModalLong { z-index: 10001; }
-      
+
       .updateFQ {
         position: absolute;
-        top: 5px;
-        right: 10px;
+        bottom: 0;
+        left: 0;
         font-size: small;
         
         z-index: 10000;
